@@ -22,12 +22,13 @@ class Visualizer:
         # plt.show() 
 
         total_models = len(model_lists)
-        max_cols_per_row = 3
-        n_cols = min(total_models, max_cols_per_row)
-        n_rows = math.ceil(total_models / max_cols_per_row)
+       # max_cols_per_row = 3
+        max_cols = 3  # Số subplot tối đa trên 1 hàng
+        n_cols = min(total_models, max_cols)
+        n_rows = math.ceil(total_models / max_cols)
         if total_models == 0:
             return None
-        fig, axs = plt.subplots(1, total_models, figsize=(6 * n_cols, 5 * n_rows), dpi=120, sharey=True, squeeze=False)
+        fig, axs = plt.subplots(n_rows, n_cols, total_models, figsize=(6 * n_cols, 5 * n_rows), dpi=120, sharey=True, squeeze=False)
 
         for index, obj in enumerate(model_lists):
             Dp, Di = obj.CalculateDrag(v_range)
