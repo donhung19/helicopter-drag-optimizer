@@ -63,10 +63,10 @@ class Visualizer:
             ]
             the_table = ax.table(
                 cellText=table_data,
-                colLabels=["Parameter", "Value"],
-                loc='bottom',
+                colLabels=["Param", "Value"],
+                loc='upper center', 
                 cellLoc='center',
-                bbox=[0, -0.5, 1, 0.3] # Đẩy bảng xuống dưới trục X
+                bbox=[0.6, 0.6, 0.35, 0.3] # Căn bảng nằm ở góc trên bên phải, chiếm 35% rộng, 30% cao
             )
             the_table.auto_set_font_size(False)
             the_table.set_fontsize(8)
