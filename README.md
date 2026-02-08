@@ -40,7 +40,7 @@ pip install -r requirements.txt
 streamlit run app.py
 
 
-## 📊 Methodology
+## Methodology
 The optimizer uses standard aerodynamic drag equations:
 1. **Parasite Drag**: $D_p = \frac{1}{2} \rho V^2 f$
 2. **Induced Drag**: $D_i = \frac{k W^2}{2 \rho V^2 \pi R^2}$
