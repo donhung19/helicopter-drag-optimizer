@@ -12,22 +12,21 @@ st.title("🚁 Helicopter Performance Analyzer")
 st.sidebar.header("Cấu hình thông số")
 st.sidebar.write("Điều chỉnh dải vận tốc để tính toán:")
 
-# --- PHẦN 1: SIDEBAR - NHẬP DẢI VẬN TỐC ---
-st.sidebar.header("Cấu hình thông số")
-st.sidebar.write("Điều chỉnh dải vận tốc để tính toán:")
+# --- SECTION 1: SIDEBAR - VELOCITY RANGE INPUT ---
+st.sidebar.header("Parameter Configuration")
+st.sidebar.write("Adjust velocity range for calculation:")
 
-# Slider cho phép chọn Min và Max của v_range
+# Example of the widgets with English labels:
 v_min, v_max = st.sidebar.slider(
-    "Dải vận tốc (m/s):",
+    "Velocity Range (m/s):",
     min_value=1, 
     max_value=200, 
-    value=(10, 80), # Giá trị mặc định
+    value=(10, 80),
     step=1
 )
 
-# Slider chọn số lượng điểm tính toán (độ mịn của đồ thị)
 points = st.sidebar.select_slider(
-    "Độ mịn đồ thị (Số điểm):",
+    "Graph Resolution (Steps):",
     options=[50, 100, 200, 500],
     value=100
 )
