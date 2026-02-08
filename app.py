@@ -41,7 +41,7 @@ uploaded_file = st.file_uploader("Choose a CSV file", type="csv")
 
 if uploaded_file is not None:
     # Khởi tạo range vận tốc
-    v_range = np.linspace(10, 80, 100)
+#    v_range = np.linspace(10, 80, 100)
     
     # Sử dụng lại Class của bạn (với một chút chỉnh sửa để nhận file upload)
     processor = ProcessData(uploaded_file) 
