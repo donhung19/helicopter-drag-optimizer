@@ -27,7 +27,7 @@ if uploaded_file is not None:
     if model_lists:
         # 2. Hiển thị bảng báo cáo ngay trên Web
         st.subheader("📊 Optimal Velocity Report")
-        report_data = [obj.get_report_data(v_range) for obj in model_lists]
+        report_data = [obj.GetResult(v_range) for obj in model_lists]
         st.dataframe(pd.DataFrame(report_data), use_container_width=True)
 
         # 3. Hiển thị đồ thị
