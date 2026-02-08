@@ -54,22 +54,19 @@ class Visualizer:
                         xytext=(v_opt + 5, d_min + 500), # Đẩy chữ ra xa một chút
                         arrowprops=dict(arrowstyle='->', color='red'))
             
-            table_data = [
-                ["Weight (N)", f"{obj.weight:,.0f}"],
-                ["R Radius (m)", f"{obj.rotor_radius:.1f}"],
-                ["f Factor", f"{obj.f_factor:.3f}"],
-                ["k Factor", f"{obj.k_factor:.2f}"],
-                ["Rho (kg/m3)", f"{obj.rho:.3f}"]
-            ]
-            the_table = ax.table(
-                cellText=table_data,
-                colLabels=["Param", "Value"],
-                loc='upper center', 
-                cellLoc='center',
-                bbox=[0.6, 0.6, 0.35, 0.3] # Căn bảng nằm ở góc trên bên phải, chiếm 35% rộng, 30% cao
+            info_text = (
+                f"$\mathbf{{Parameters:}}$\n"
+                f"Weight: {obj.weight:,.0f} N\n"
+                f"Radius: {obj.rotor_radius:.1f} m\n"
+                f"f-factor: {obj.f_factor:.3f}\n"
+                f"k-factor: {obj.k_factor:.2f}\n"
+                f"Density: {obj.rho:.3f} kg/m³"
             )
-            the_table.auto_set_font_size(False)
-            the_table.set_fontsize(8)
+
+            # Đặt Text Box vào vị trí (transform=ax.transAxes giúp cố định vị trí theo tỉ lệ 0-1)
+            props = dict(boxstyle='round,pad=0.5', facecolor='wheat', alpha=0.5, edgecolor='gray')
+            ax.text(0.05, 0.95, info_text, transform=ax.transAxes, fontsize=8,
+                    verticalalignment='top', bbox=props)
 
         plt.tight_layout()
         #plt.show()
