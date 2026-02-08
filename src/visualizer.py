@@ -52,6 +52,7 @@ class Visualizer:
             ax.annotate(f'V_opt: {v_opt:.1f} m/s\nDrag: {d_min:.1f} N',
                         xy=(v_opt, d_min), 
                         xytext=(v_opt + 5, d_min + 500), # Đẩy chữ ra xa một chút
+                        fontsize=12,
                         arrowprops=dict(arrowstyle='->', color='red'))
             
             info_text = (
