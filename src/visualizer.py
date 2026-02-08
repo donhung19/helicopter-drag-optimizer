@@ -28,7 +28,7 @@ class Visualizer:
         n_rows = math.ceil(total_models / max_cols)
         if total_models == 0:
             return None
-        fig, axs = plt.subplots(n_rows, n_cols, figsize=(6 * n_cols, 5 * n_rows), dpi=120, sharey=True, squeeze=False)
+        fig, axs = plt.subplots(n_rows, n_cols, figsize=(6 * n_cols, 5 * n_rows), dpi=120, sharey=False, squeeze=False)
 
         for index, obj in enumerate(model_lists):
             row_idx = index // n_cols  # Chia lấy phần nguyên để tìm hàng
@@ -55,4 +55,5 @@ class Visualizer:
                         arrowprops=dict(arrowstyle='->', color='red'))
 
         plt.tight_layout()
-        plt.show()
+        #plt.show()
+        return fig
