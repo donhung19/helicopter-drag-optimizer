@@ -53,6 +53,7 @@ class Visualizer:
                         xy=(v_opt, d_min), 
                         xytext=(v_opt + 5, d_min + 500), # Đẩy chữ ra xa một chút
                         fontsize=12,
+                        fontweight='bold',
                         arrowprops=dict(arrowstyle='->', color='red'))
             
             info_text = (
