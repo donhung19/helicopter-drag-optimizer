@@ -34,7 +34,7 @@ if uploaded_file is not None:
         st.subheader("📈 Drag Analysis Curves")
         # Chỉnh sửa hàm plotData để nó return về fig thay vì plt.show()
         plotter = Visualizer()
-        fig = plotter.generate_fig(model_lists, v_range) 
+        fig = plotter.plotData(model_lists, v_range) 
         st.pyplot(fig)
     else:
         st.error("No valid data found in CSV!")
