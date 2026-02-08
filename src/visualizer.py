@@ -65,7 +65,7 @@ class Visualizer:
 
             # Đặt Text Box vào vị trí (transform=ax.transAxes giúp cố định vị trí theo tỉ lệ 0-1)
             props = dict(boxstyle='round,pad=0.5', facecolor='wheat', alpha=0.5, edgecolor='gray')
-            ax.text(0.05, 0.95, info_text, transform=ax.transAxes, fontsize=8,
+            ax.text(0.05, 2.95, info_text, transform=ax.transAxes, fontsize=12,
                     verticalalignment='top', bbox=props)
 
         plt.tight_layout()
