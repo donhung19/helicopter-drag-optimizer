@@ -31,21 +31,25 @@ class Visualizer:
         fig, axs = plt.subplots(n_rows, n_cols, figsize=(6 * n_cols, 5 * n_rows), dpi=120, sharey=True, squeeze=False)
 
         for index, obj in enumerate(model_lists):
+            row_idx = index // n_cols  # Chia lấy phần nguyên để tìm hàng
+            col_idx = index % n_cols   # Chia lấy phần dư để tìm cột
+            ax = axs[row_idx, col_idx] # Truy cập đúng ô trong ma trận
+
             Dp, Di = obj.CalculateDrag(v_range)
             Dt = Dp + Di
             v_opt, d_min = obj.FindOptimalVelocity(v_range)
 
-            axs[0,index].plot(v_range, Dp, label='Parasite Drag')
-            axs[0,index].plot(v_range, Di, label='Induced Drag')
-            axs[0,index].plot(v_range, Dt, linewidth=2, label='Total Drag')
+            ax.plot(v_range, Dp, label='Parasite Drag')
+            ax.plot(v_range, Di, label='Induced Drag')
+            ax.plot(v_range, Dt, linewidth=2, label='Total Drag')
 
-            axs[0,index].set_title(model_lists[index].name)
-            axs[0,index].set_xlabel('Velocity')
-            axs[0,index].set_ylabel('Drag')
-            axs[0,index].legend()
+            ax.set_title(model_lists[index].name)
+            ax.set_xlabel('Velocity')
+            ax.set_ylabel('Drag')
+            ax.legend()
 
-            axs[0,index].scatter(v_opt, d_min, color='red', zorder=5)
-            axs[0,index].annotate(f'V_opt: {v_opt:.1f} m/s\nDrag: {d_min:.1f} N',
+            ax.scatter(v_opt, d_min, color='red', zorder=5)
+            ax.annotate(f'V_opt: {v_opt:.1f} m/s\nDrag: {d_min:.1f} N',
                         xy=(v_opt, d_min), 
                         xytext=(v_opt + 5, d_min + 500), # Đẩy chữ ra xa một chút
                         arrowprops=dict(arrowstyle='->', color='red'))
