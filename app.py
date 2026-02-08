@@ -9,8 +9,8 @@ st.set_page_config(page_title="Helicopter Drag Analyzer", layout="wide")
 
 st.title("🚁 Helicopter Performance Analyzer")
 
-st.sidebar.header("Cấu hình thông số")
-st.sidebar.write("Điều chỉnh dải vận tốc để tính toán:")
+st.sidebar.header("Parameter Configuration")
+st.sidebar.write("Adjust the velocity range for calculations:")
 
 # --- SECTION 1: SIDEBAR - VELOCITY RANGE INPUT ---
 st.sidebar.header("Parameter Configuration")
