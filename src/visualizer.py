@@ -27,7 +27,7 @@ class Visualizer:
         n_rows = math.ceil(total_models / max_cols_per_row)
         if total_models == 0:
             return None
-        fig, axs = plt.subplots(1, total_models, ffigsize=(6 * n_cols, 5 * n_rows), dpi=120, sharey=True, squeeze=False)
+        fig, axs = plt.subplots(1, total_models, figsize=(6 * n_cols, 5 * n_rows), dpi=120, sharey=True, squeeze=False)
 
         for index, obj in enumerate(model_lists):
             Dp, Di = obj.CalculateDrag(v_range)
