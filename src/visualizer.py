@@ -1,6 +1,7 @@
 import numpy as np
 import matplotlib.pyplot as plt
 import pandas as pd
+import math
 import os
 
 class Visualizer:
@@ -20,10 +21,13 @@ class Visualizer:
         # plt.legend()
         # plt.show() 
 
-        cols = len(model_lists)
-        if cols == 0:
+        total_models = len(model_lists)
+        max_cols_per_row = 3
+        n_cols = min(total_models, max_cols_per_row)
+        n_rows = math.ceil(total_models / max_cols_per_row)
+        if total_models == 0:
             return None
-        fig, axs = plt.subplots(1, cols, figsize=(5 * cols, 5), sharey=True, squeeze=False)
+        fig, axs = plt.subplots(1, total_models, ffigsize=(6 * n_cols, 5 * n_rows), dpi=120, sharey=True, squeeze=False)
 
         for index, obj in enumerate(model_lists):
             Dp, Di = obj.CalculateDrag(v_range)
