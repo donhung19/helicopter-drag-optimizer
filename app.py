@@ -65,8 +65,8 @@ if uploaded_file is not None:
     else:
         st.error("No valid data found in CSV!")
 
-# Trong app.py
-plotter = Visualizer()
-fig = plotter.plotData(model_lists, v_range) # Nhận đối tượng fig từ class
-if fig:
-    st.pyplot(fig) # Streamlit hiển thị fig này        
+# # Trong app.py
+# plotter = Visualizer()
+# fig = plotter.plotData(model_lists, v_range) # Nhận đối tượng fig từ class
+# if fig:
+#     st.pyplot(fig) # Streamlit hiển thị fig này        
