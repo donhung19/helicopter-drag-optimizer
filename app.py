@@ -8,6 +8,33 @@ from src.visualizer import Visualizer
 st.set_page_config(page_title="Helicopter Drag Analyzer", layout="wide")
 
 st.title("🚁 Helicopter Performance Analyzer")
+
+st.sidebar.header("Cấu hình thông số")
+st.sidebar.write("Điều chỉnh dải vận tốc để tính toán:")
+
+# --- PHẦN 1: SIDEBAR - NHẬP DẢI VẬN TỐC ---
+st.sidebar.header("Cấu hình thông số")
+st.sidebar.write("Điều chỉnh dải vận tốc để tính toán:")
+
+# Slider cho phép chọn Min và Max của v_range
+v_min, v_max = st.sidebar.slider(
+    "Dải vận tốc (m/s):",
+    min_value=1, 
+    max_value=200, 
+    value=(10, 80), # Giá trị mặc định
+    step=1
+)
+
+# Slider chọn số lượng điểm tính toán (độ mịn của đồ thị)
+points = st.sidebar.select_slider(
+    "Độ mịn đồ thị (Số điểm):",
+    options=[50, 100, 200, 500],
+    value=100
+)
+
+# Tạo v_range dựa trên input của user
+v_range = np.linspace(v_min, v_max, points)
+
 st.write("Upload your fleet CSV data to analyze optimal velocity and drag.")
 
 # 1. Widget Upload File
