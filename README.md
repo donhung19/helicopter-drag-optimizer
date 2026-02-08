@@ -15,6 +15,7 @@ An interactive Streamlit web app for analyzing helicopter aerodynamic performanc
 - **Core Logic**: Object-Oriented Programming (OOP) in Python
 
 ## Project Structure
+```
 helicopter-drag-optimizer/
 ├── app.py               # Main Streamlit application entry point
 ├── src/                 # Core logic modules
@@ -24,6 +25,7 @@ helicopter-drag-optimizer/
 ├── data/                # Sample CSV data files
 ├── requirements.txt     # Project dependencies
 └── README.md            # Documentation
+```
 
 ## Getting Started
 
